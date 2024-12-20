@@ -1,0 +1,57 @@
+<LoginScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 50
+        spacing: 20
+        
+        # Title
+        Label:
+            text: 'Bank App Login'
+            font_size: 32
+            size_hint_y: None
+            height: 50
+            halign: 'center'
+        
+        # Username Field
+        TextInput:
+            id: username
+            hint_text: 'Enter username'
+            size_hint_y: None
+            height: 40
+            multiline: False
+            focus: True
+            padding_x: 10
+            padding_y: 5
+            background_normal: ''
+            background_color: 0.9, 0.9, 0.9, 1
+        
+        # Password Field
+        TextInput:
+            id: password
+            hint_text: 'Enter password'
+            size_hint_y: None
+            height: 40
+            multiline: False
+            password: True
+            padding_x: 10
+            padding_y: 5
+            background_normal: ''
+            background_color: 0.9, 0.9, 0.9, 1
+        
+        # Login Button
+        Button:
+            text: 'Login'
+            size_hint_y: None
+            height: 50
+            background_color: 0.2, 0.5, 0.8, 1
+            on_press: root.get_login_button(username.text, password.text)
+            
+        # Error Message (Hidden by default)
+        Label:
+            id: error_message
+            text: 'Invalid username or password.'
+            color: 1, 0, 0, 1
+            size_hint_y: None
+            height: 30
+            halign: 'center'
+            opacity: 0  # Hide by default, change to 1 when an error occurs

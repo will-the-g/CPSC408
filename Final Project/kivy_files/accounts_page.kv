@@ -1,0 +1,62 @@
+<AccountsScreen>
+    canvas.before:
+        Color:
+            rgba: 100/255, 100/255, 154/255, 0.86
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    BoxLayout:
+        orientation: "vertical"
+        spacing: dp(10)
+        padding: dp(10)
+        
+
+        # Top section: Function buttons
+        GridLayout:
+            cols: 1
+            size_hint_y: 0.1
+            size_hint_x: 0.08
+            spacing: dp(5)
+            
+            Button:
+                font_size: "10sp"
+                text: "Back"
+                background_color: 0,0,0,0
+                on_press: root.back_button()
+                canvas.before:
+                    Color: 
+                        rgba: 0.5, 0.5, 0.6, 1
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [20]
+                    Color: 
+                        rgba: 18/255, 44/255, 70/255, 0.94
+                    Line:
+                        width: 2.35
+                        rounded_rectangle: (self.x, self.y, self.width, self.height, 20)
+                
+
+        BoxLayout:
+            orientation: "vertical"
+            spacing: dp(10)
+            padding: dp(10)
+            size_hint_y: 0.8
+
+            Label:
+                text: "Accounts"
+                markup: True
+                font_size: "20sp"
+                halign: "center"
+                valign: "middle"
+                size_hint_y: None
+                height: dp(40)
+            ScrollView:
+                id: accounts_section
+                
+                    
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: 0.1
+            spacing: dp(10)

@@ -1,0 +1,122 @@
+<AccountScreen>
+    canvas.before:
+        Color:
+            rgba: 100/255, 100/255, 154/255, 0.86
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    BoxLayout:
+        orientation: "vertical"
+        spacing: dp(10)
+        padding: dp(10)
+        
+
+        # Top section: Function buttons
+        GridLayout:
+            cols: 10
+            size_hint_y: 0.1
+            size_hint_x: 1.0
+            spacing: dp(5)
+            
+            Button:
+                font_size: "10sp"
+                text: "Back"
+                background_color: 0,0,0,0
+                on_press: root.back_button()
+                canvas.before:
+                    Color: 
+                        rgba: 0.5, 0.5, 0.6, 1
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [20]
+                    Color: 
+                        rgba: 18/255, 44/255, 70/255, 0.94
+                    Line:
+                        width: 2.35
+                        rounded_rectangle: (self.x, self.y, self.width, self.height, 20)
+                size_hint_x: 0.1
+                grid_layout: self.parent
+                col: 1
+            Button:
+                font_size: "10sp"
+                text: "Download\nTransaction\nHistory"
+                text_height: 1.0
+                background_color: 0,0,0,0
+                on_press: root.download_transaction_history()
+                canvas.before:
+                    Color: 
+                        rgba: 0.5, 0.5, 0.6, 1
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [20]
+                    Color: 
+                        rgba: 18/255, 44/255, 70/255, 0.94
+                    Line:
+                        width: 2.35
+                        rounded_rectangle: (self.x, self.y, self.width, self.height, 20)
+                size_hint_x: 0.1
+                grid_layout: self.parent
+                col: 2
+            Widget:
+                size_hint_x: 0.1
+            Widget:
+                size_hint_x: 0.1
+            Widget:
+                size_hint_x: 0.1
+            Widget:
+                size_hint_x: 0.1
+            Widget:
+                size_hint_x: 0.1
+            Widget:
+                size_hint_x: 0.1
+            Widget:
+                size_hint_x: 0.1
+            
+            Button:
+                font_size: "10sp"
+                text: "Delete\nAccount"
+                line_height: 0.9
+                background_color: 0,0,0,0
+                on_press: root.delete_account()
+                canvas.before:
+                    Color: 
+                        rgba: 0.5, 0.5, 0.6, 1
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [20]
+                    Color: 
+                        rgba: 18/255, 44/255, 70/255, 0.94
+                    Line:
+                        width: 2.35
+                        rounded_rectangle: (self.x, self.y, self.width, self.height, 20)
+                size_hint_x: 0.1
+                grid_layout: self.parent
+                col: 9
+                
+
+        BoxLayout:
+            orientation: "vertical"
+            spacing: dp(10)
+            padding: dp(10)
+            size_hint_y: 0.8
+
+            Label:
+                text: "Transactions"
+                markup: True
+                font_size: "20sp"
+                halign: "center"
+                valign: "middle"
+                size_hint_y: None
+                height: dp(40)
+            ScrollView:
+                id: transaction_section
+                
+                    
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: 0.1
+            spacing: dp(10)

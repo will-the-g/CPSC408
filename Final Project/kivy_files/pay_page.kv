@@ -1,0 +1,263 @@
+<PayScreen>
+    canvas.before:
+        Color:
+            rgba: 100/255, 100/255, 154/255, 0.86
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    BoxLayout:
+        orientation: "vertical"
+        spacing: dp(10)
+        padding: dp(10)
+
+        # Top Section (10%) for the back button
+        GridLayout:
+            cols: 10
+            size_hint_y: 0.1
+            size_hint_x: 1.0
+            spacing: dp(5)
+            
+            Button:
+                font_size: "10sp"
+                text: "Back"
+                background_color: 0,0,0,0
+                on_press: root.back_button()
+                canvas.before:
+                    Color: 
+                        rgba: 0.5, 0.5, 0.6, 1
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [20]
+                    Color: 
+                        rgba: 18/255, 44/255, 70/255, 0.94
+                    Line:
+                        width: 2.35
+                        rounded_rectangle: (self.x, self.y, self.width, self.height, 20) 
+                size_hint_x: 0.1
+                grid_layout: self.parent
+                col: 1
+
+            Button:
+                font_size: "10sp"
+                text: "Download\nStatement\nHistory"
+                text_height: 1.0
+                background_color: 0,0,0,0
+                on_press: root.download_statement_history()
+                canvas.before:
+                    Color: 
+                        rgba: 0.5, 0.5, 0.6, 1
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [20]
+                    Color: 
+                        rgba: 18/255, 44/255, 70/255, 0.94
+                    Line:
+                        width: 2.35
+                        rounded_rectangle: (self.x, self.y, self.width, self.height, 20)
+                size_hint_x: 0.1
+                grid_layout: self.parent
+                col: 2
+            Widget:
+                size_hint_x: 0.1
+            Widget:
+                size_hint_x: 0.1
+            Widget:
+                size_hint_x: 0.1
+            Widget:
+                size_hint_x: 0.1
+            Widget:
+                size_hint_x: 0.1
+            Widget:
+                size_hint_x: 0.1
+            Widget:
+                size_hint_x: 0.1
+            Widget:
+                size_hint_x: 0.1
+
+        # Middle Section (30%) for the 3 main functions
+        BoxLayout:
+            size_hint_y: 0.2
+            padding: [10, 10, 10, 10]
+            spacing: 20
+            orientation: 'horizontal'
+            
+            # Pay Bills Button
+            Button:
+                text: 'Pay Bills'
+                size_hint_y: None
+                background_color: (0,0,0,0)
+                canvas.before:
+                    Color:
+                        rgba: 0.2, 0.5, 0.8, 1
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [30]
+                    Color: 
+                        rgba: 18/255, 44/255, 70/255, 0.94
+                    Line:
+                        width: 2.35
+                        rounded_rectangle: (self.x, self.y, self.width, self.height, 30)
+                on_press: root.pay_bills()  # Popup screen for paying bills
+                
+            # Transfer Money Button
+            Button:
+                text: 'Transfer Money'
+                size_hint_y: None
+                background_color: (0,0,0,0)
+                canvas.before:
+                    Color:
+                        rgba: 0.2, 0.5, 0.8, 1
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [30]
+                    Color: 
+                        rgba: 18/255, 44/255, 70/255, 0.94
+                    Line:
+                        width: 2.35
+                        rounded_rectangle: (self.x, self.y, self.width, self.height, 30)
+                on_press: root.transfer_money()  # Popup screen for transferring money
+
+            # Pay Another Person Button
+            Button:
+                text: 'Send Money to\nAnother Person'
+                size_hint_y: None
+                background_color: (0,0,0,0)
+                canvas.before:
+                    Color:
+                        rgba: 0.2, 0.5, 0.8, 1
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [30]
+                    Color: 
+                        rgba: 18/255, 44/255, 70/255, 0.94
+                    Line:
+                        width: 2.35
+                        rounded_rectangle: (self.x, self.y, self.width, self.height, 30)
+                on_press: root.pay_person()  # Popup screen for paying someone else
+
+        # Past Acitivity
+        BoxLayout:
+            size_hint_y: 0.7
+            padding: [10, 10, 10, 10]
+            orientation: 'vertical'
+
+            # Past Activity Header
+            Label:
+                text: 'Past Payments'
+                font_size: '20sp'
+                size_hint_y: 0.1
+
+            # List of the 2 most recent payments
+            GridLayout:
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: dp(10)
+                
+
+                # 1st Most recent payment
+                BoxLayout:
+                    orientation: "vertical"
+                    padding: dp(10)
+                    size_hint_y: None
+                    height: dp(100)
+                    canvas.before:
+                        Color:
+                            rgba: 0.5, 0.5, 0.6, 1
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [30]
+                        Color: 
+                            rgba: 18/255, 44/255, 70/255, 0.94
+                        Line:
+                            width: 2.35
+                            rounded_rectangle: (self.x, self.y, self.width, self.height, 30)
+
+                    Label:
+                        id: first_recent
+                        text: "no recent payments"
+                        font_size: "14sp"
+                        halign: "center"
+                        valign: "middle"
+                        bold: True
+                        size_hint_y: None
+                        height: self.texture_size[1] + dp(10)
+                    
+                    Label:
+                        id: first_recent_second
+                        text: ""
+                        font_size: "10sp"
+                        halign: "center"
+                        valign: "middle"
+                        bold: True
+                        size_hint_y: None
+                        height: self.texture_size[1] + dp(10)
+
+
+                # 2nd most recent payment
+                BoxLayout:
+                    orientation: "vertical"
+                    padding: dp(20)
+                    size_hint_y: None
+                    height: dp(100)
+                    canvas.before:
+                        Color:
+                            rgba: 0.5, 0.5, 0.6, 1
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [30]
+                        Color: 
+                            rgba: 18/255, 44/255, 70/255, 0.94
+                        Line:
+                            width: 2.35
+                            rounded_rectangle: (self.x, self.y, self.width, self.height, 30)
+
+                    Label:
+                        id: second_recent
+                        text: "No Recent Payment"
+                        font_size: "14sp"
+                        halign: "center"
+                        valign: "middle"
+                        bold: True
+                        size_hint_y: None
+                        height: self.texture_size[1] + dp(10)
+
+                    Label:
+                        id: second_recent_second
+                        text: ""
+                        font_size: "10sp"
+                        halign: "center"
+                        valign: "middle"
+                        bold: True
+                        size_hint_y: None
+                        height: self.texture_size[1] + dp(10)
+
+                # "More Payments" Button at the bottom
+                Button:
+                    text: 'More Payments'
+                    size_hint_y: 0.1
+                    on_press: root.more_payments()  # You'll implement this function
+                    orientation: "vertical"
+                    padding: dp(10)
+                    size_hint_y: None
+                    height: dp(50)
+                    background_color: (0,0,0,0)
+                    canvas.before:
+                        Color:
+                            rgba: 0.2, 0.5, 0.8, 1
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [30]
+                        Color: 
+                            rgba: 18/255, 44/255, 70/255, 0.94
+                        Line:
+                            width: 2.35
+                            rounded_rectangle: (self.x, self.y, self.width, self.height, 30)

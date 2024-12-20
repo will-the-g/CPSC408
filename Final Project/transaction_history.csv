@@ -1,0 +1,6 @@
+userID,fullName,email,accountNumber,accountType,cardNumber,cardType,transactionID,transactionType,amount,transactionDate,transactionStatus
+,John Doe,1,1000001,Checkings,4000123412341234,Credit,1,Purchase,150.75,2024-11-01 14:30:00,Complete
+,John Doe,1,1000001,Checkings,4000123412341234,Credit,11,Card Payment,130.5,2024-12-13 20:15:46,Completed
+,John Doe,1,1000001,Checkings,4000123412341234,Credit,12,Card Payment,100.5,2024-12-13 20:19:45,Completed
+,John Doe,1,1000001,Checkings,4000123412341234,Credit,13,Card Payment,95.5,2024-12-13 23:40:11,Completed
+,John Doe,1,1000001,Checkings,4000123412341234,Credit,14,Card Payment,10.0,2024-12-13 23:45:58,Completed

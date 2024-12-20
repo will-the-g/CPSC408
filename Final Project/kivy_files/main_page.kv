@@ -1,0 +1,311 @@
+<HomeScreen>:
+    canvas.before:
+        Color:
+            rgba: 100/255, 100/255, 154/255, 0.86
+        Rectangle:
+            size: self.size
+            pos: self.pos
+        
+    BoxLayout:
+        orientation: "vertical"
+        spacing: dp(10)
+        padding: dp(10)
+        
+
+        # Top section: Function buttons
+        GridLayout:
+            cols: 10
+            size_hint_y: 0.15
+            spacing: dp(5)
+            
+            
+
+            Button:
+                text: "Accounts"
+                font_size: "13sp"
+                on_press: root.accounts_button()
+                background_color: 0.5, 0.5, 0.6, 0
+                canvas.before:
+                    Color: 
+                        rgba: 0.5, 0.5, 0.6, 1
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [20]
+                    Color: 
+                        rgba: 18/255, 44/255, 70/255, 0.94
+                    Line:
+                        width: 2.35
+                        rounded_rectangle: (self.x, self.y, self.width, self.height, 20)
+                            
+                
+
+            Button:
+                text: "Pay &\nTransfer"
+                font_size: "13sp"
+                on_press: root.pay_button()
+                background_color: 0.5, 0.5, 0.6, 0
+                canvas.before:
+                    Color: 
+                        rgba: 0.5, 0.5, 0.6, 1
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [20]
+                    Color: 
+                        rgba: 18/255, 44/255, 70/255, 0.94
+                    Line:
+                        width: 2.35
+                        rounded_rectangle: (self.x, self.y, self.width, self.height, 20)
+
+            Button:
+                text: "Deposit\nChecks"
+                font_size: "13sp"
+                on_press: root.checks_button()
+                background_color: 0.5, 0.5, 0.6, 0
+                canvas.before:
+                    Color: 
+                        rgba: 0.5, 0.5, 0.6, 1
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [20]
+                    Color: 
+                        rgba: 18/255, 44/255, 70/255, 0.94
+                    Line:
+                        width: 2.35
+                        rounded_rectangle: (self.x, self.y, self.width, self.height, 20)
+
+            Button:
+                text: "Investments"
+                font_size: "13sp"
+                on_press: root.investments_button()
+                background_color: 0.5, 0.5, 0.6, 0
+                canvas.before:
+                    Color: 
+                        rgba: 0.5, 0.5, 0.6, 1
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [20]
+                    Color: 
+                        rgba: 18/255, 44/255, 70/255, 0.94
+                    Line:
+                        width: 2.35
+                        rounded_rectangle: (self.x, self.y, self.width, self.height, 20)
+
+            Button:
+                text: "View\nFICO\nScore"
+                font_size: "13sp"
+                on_press: root.fico_button()
+                background_color: 0.5, 0.5, 0.6, 0
+                canvas.before:
+                    Color: 
+                        rgba: 0.5, 0.5, 0.6, 1
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [20]
+                    Color: 
+                        rgba: 18/255, 44/255, 70/255, 0.94
+                    Line:
+                        width: 2.35
+                        rounded_rectangle: (self.x, self.y, self.width, self.height, 20)
+
+            Button:
+                text: "Rewards"
+                font_size: "13sp"
+                on_press: root.rewards_button()
+                background_color: 0.5, 0.5, 0.6, 0
+                canvas.before:
+                    Color: 
+                        rgba: 0.5, 0.5, 0.6, 1
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [20]
+                    Color: 
+                        rgba: 18/255, 44/255, 70/255, 0.94
+                    Line:
+                        width: 2.35
+                        rounded_rectangle: (self.x, self.y, self.width, self.height, 20)
+
+            Button:
+                text: "Loans"
+                font_size: "13sp"
+                on_press: root.loans_button()
+                background_color: 0.5, 0.5, 0.6, 0
+                canvas.before:
+                    Color: 
+                        rgba: 0.5, 0.5, 0.6, 1
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [20]
+                    Color: 
+                        rgba: 18/255, 44/255, 70/255, 0.94
+                    Line:
+                        width: 2.35
+                        rounded_rectangle: (self.x, self.y, self.width, self.height, 20)
+
+
+            Button:
+                text: "Account\nSettings"
+                font_size: "13sp"
+                on_press: root.settings_button()
+                background_color: 0.5, 0.5, 0.6, 0
+                canvas.before:
+                    Color: 
+                        rgba: 0.5, 0.5, 0.6, 1
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [20]
+                    Color: 
+                        rgba: 18/255, 44/255, 70/255, 0.94
+                    Line:
+                        width: 2.35
+                        rounded_rectangle: (self.x, self.y, self.width, self.height, 20)
+
+            Button:
+                text: "Logout"
+                font_size: "13sp"
+                on_press: root.logout_button()
+                background_color: 0.5, 0.5, 0.6, 0
+                canvas.before:
+                    Color: 
+                        rgba: 0.5, 0.5, 0.6, 1
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [20]
+                    Color: 
+                        rgba: 18/255, 44/255, 70/255, 0.94
+                    Line:
+                        width: 2.35
+                        rounded_rectangle: (self.x, self.y, self.width, self.height, 20)
+                
+
+        # Middle section: Welcome message and account boxes
+        BoxLayout:
+            orientation: "vertical"
+            spacing: dp(10)
+            padding: dp(10)
+            size_hint_y: 0.7
+
+            Label:
+                id: welcome_label
+                text: "Default Text"
+                markup: True
+                font_size: "20sp"
+                halign: "center"
+                valign: "middle"
+                size_hint_y: None
+                height: dp(40)
+
+            GridLayout:
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: dp(10)
+                
+
+                # Example account boxes
+                BoxLayout:
+                    orientation: "vertical"
+                    padding: dp(10)
+                    size_hint_y: None
+                    height: dp(80)
+                    canvas.before:
+                        Color:
+                            rgba: 0.2, 0.5, 0.8, 1  # Light gray background
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [30]
+                        Color: 
+                            rgba: 18/255, 44/255, 70/255, 0.94
+                        Line:
+                            width: 2.35
+                            rounded_rectangle: (self.x, self.y, self.width, self.height, 30)
+
+                    Label:
+                        text: "Checking Account"
+                        font_size: "16sp"
+                        bold: True
+                        size_hint_y: None
+                        height: self.texture_size[1] + dp(10)
+
+                    Label:
+                        id: checkings_amount
+                        text: "$0.00"
+                        font_size: "18sp"
+                        bold: True
+
+                BoxLayout:
+                    orientation: "vertical"
+                    padding: dp(10)
+                    size_hint_y: None
+                    height: dp(80)
+                    canvas.before:
+                        Color:
+                            rgba: 0.2, 0.5, 0.8, 1
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [30]
+                        Color: 
+                            rgba: 18/255, 44/255, 70/255, 0.94
+                        Line:
+                            width: 2.35
+                            rounded_rectangle: (self.x, self.y, self.width, self.height, 30)
+
+                    Label:
+                        text: "Savings Account"
+                        font_size: "16sp"
+                        bold: True
+                        size_hint_y: None
+                        height: self.texture_size[1] + dp(10)
+
+                    Label:
+                        id: savings_amount
+                        text: "$0.00"
+                        font_size: "18sp"
+                        bold: True
+
+                BoxLayout:
+                    orientation: "vertical"
+                    padding: dp(10)
+                    size_hint_y: None
+                    height: dp(80)
+                    canvas.before:
+                        Color:
+                            rgba: 0.2, 0.5, 0.8, 1
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [30]
+                        Color: 
+                            rgba: 18/255, 44/255, 70/255, 0.94
+                        Line:
+                            width: 2.35
+                            rounded_rectangle: (self.x, self.y, self.width, self.height, 30)
+
+                    Label:
+                        text: "MMA"
+                        font_size: "16sp"
+                        bold: True
+                        size_hint_y: None
+                        height: self.texture_size[1] + dp(10)
+
+                    Label:
+                        id: mma_amount
+                        text: "$0.00"
+                        font_size: "18sp"
+                        bold: True
+
+        # Bottom section: Empty so far
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: 0.15
+            spacing: dp(10)
