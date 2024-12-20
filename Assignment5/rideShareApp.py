@@ -4,7 +4,7 @@ from db_operations import db_operations
 from datetime import datetime
 
 #global variables
-db_ops = db_operations(host="localhost", user="root", password="CPSC408!", database="rideshare")
+db_ops = db_operations(host="localhost", user="root", password="", database="rideshare")
 db_ops.create_tables()
 db_ops.populate_tables()
 
